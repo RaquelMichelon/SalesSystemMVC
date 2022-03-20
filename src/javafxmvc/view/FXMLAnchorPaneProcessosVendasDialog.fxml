@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneProcessosVendasDialogController">
+   <children>
+      <GridPane layoutX="39.0" layoutY="29.0" prefHeight="330.0" prefWidth="338.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="4.0" prefWidth="53.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="285.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="63.0" minHeight="4.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="191.0" minHeight="10.0" prefHeight="189.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Cliente" />
+            <Label text="Data" GridPane.rowIndex="1" />
+            <Label text="Pago" GridPane.rowIndex="2" />
+            <Label text="Produto" GridPane.rowIndex="3" />
+            <Label text="Itens" GridPane.rowIndex="4" />
+            <Label text="Valor" GridPane.rowIndex="5" />
+            <ComboBox fx:id="comboBoxVendaCliente" prefHeight="25.0" prefWidth="284.0" promptText="Selecione o Cliente..." GridPane.columnIndex="1" />
+            <DatePicker fx:id="datePickerVendaData" prefHeight="25.0" prefWidth="284.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <CheckBox fx:id="checkBoxVendaPago" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TableView fx:id="tableViewItensDeVenda" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <columns>
+                <TableColumn fx:id="tableColumnItemDeVendaProduto" prefWidth="127.0" text="Produto" />
+                <TableColumn fx:id="tableColumnItemdeVendaQuantidade" prefWidth="75.0" text="Quantidade" />
+                  <TableColumn fx:id="tableColumnItemDeVendaValor" prefWidth="82.0" text="Valor" />
+              </columns>
+               <contextMenu>
+                  <ContextMenu fx:id="contextMenu">
+                    <items>
+                      <MenuItem fx:id="contextMenuItemAtualizarQtd" mnemonicParsing="false" onAction="#handleContextMenuItemAtualizarQtd" text="Alterar Quantidade" />
+                        <MenuItem fx:id="contextMenuItemRemoverItem" mnemonicParsing="false" onAction="#handleContextMenuItemRemoverItem" text="Remover Item" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <TextField fx:id="textFieldVendaValor" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ComboBox fx:id="comboBoxVendaProduto" prefHeight="25.0" prefWidth="168.0" promptText="Selecione o Produto..." />
+                  <TextField fx:id="textFieldVendaItemDeVendaQuantidade" prefHeight="25.0" prefWidth="37.0" />
+                  <Button fx:id="buttonAdicionar" mnemonicParsing="false" onAction="#handleButtonAdicionar" prefHeight="25.0" prefWidth="80.0" text="Adicionar" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Group layoutX="144.0" layoutY="388.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <Button fx:id="buttonConfirmar" mnemonicParsing="false" onAction="#handleButtonConfirmar" text="Confirmar" />
+            <Button fx:id="buttonCancelar" layoutX="84.0" mnemonicParsing="false" onAction="#handleButtonCancelar" prefHeight="25.0" prefWidth="73.0" text="Cancelar" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

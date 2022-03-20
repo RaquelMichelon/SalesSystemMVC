@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLVBoxMainController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Cadastros">
+            <items>
+                  <MenuItem fx:id="menuItemCadastroCategorias" mnemonicParsing="false" onAction="#handleMenuItemCadastrosCategorias" text="Categorias" />
+                  <MenuItem fx:id="menuItemCadastroClientes" mnemonicParsing="false" onAction="#handleMenuItemCadastrosClientes" text="Clientes" />
+              <MenuItem fx:id="menuItemCadastroProdutos" mnemonicParsing="false" onAction="#handleMenuItemCadastrosProdutos" text="Produtos" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Processos">
+              <items>
+                <MenuItem fx:id="menuItemProcessosVendas" mnemonicParsing="false" onAction="#handleMenuItemProcessosVendas" text="Vendas" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Gráficos">
+            <items>
+              <MenuItem fx:id="menuItemGraficosVendasPorMes" mnemonicParsing="false" onAction="#handleMenuItemGraficosVendasPorMes" text="Vendas Mensais" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Relatórios">
+            <items>
+              <MenuItem fx:id="menuItemRelatorioQuantidadeProdutosEstoque" mnemonicParsing="false" onAction="#handleMenuItemRelatoriosQuantidadeProdutos" text="Quantidade de Produtos em Estoque" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="anchorPane" prefHeight="377.0" prefWidth="600.0">
+         <children>
+            <Circle fill="#e1c888" layoutX="294.0" layoutY="183.0" radius="144.0" stroke="#e1c888" strokeType="INSIDE" />
+            <Circle fill="#f7f7f79c" layoutX="291.0" layoutY="187.0" radius="141.0" stroke="#f7f7f718" strokeType="INSIDE" />
+            <Text fill="#da6767" layoutX="166.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de Vendas">
+               <font>
+                  <Font name="Poppins SemiBold" size="26.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+   </children>
+</VBox>
